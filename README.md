@@ -1,6 +1,5 @@
 # Cmed_cob_sol
-> Calculates the runoff coefficient (cmed) of different land types -
-> Calcula o coeficiente de runoff (Cmed) para diferentes tipos de cobertura do solo
+> Calcula o coeficiente de runoff (Cmed) para diferentes tipos de cobertura do solo - Calculates the runoff coefficient (cmed) of different land types
 
 
 ## Preparação dos arquivos de entrada necessários:
