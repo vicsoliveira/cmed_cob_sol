@@ -1,25 +1,25 @@
 # Cmed_cob_sol
-> Calcula o coeficiente de runoff (Cmed) para diferentes tipos de cobertura do solo - Calculates the runoff coefficient (cmed) of different land types
+> Script em Python para calcular o coeficiente de runoff (Cmed) para diferentes tipos de cobertura do solo - Python script to calculate the runoff coefficient (cmed) of different land types
 
 
-## Preparação dos arquivos de entrada necessários:
+## Preparação dos arquivos necessários:
 
-Para esse código inicialmente são gerados o shapefile com os polígonos das bacias de contribuição da área em estudo e o arquivo csv com os tipos de cobertura do solo e os respectivos valores do coeficiente de runoff.
+Para rodar o script é necessário anteriormente a geração de dois arquivos. Um arquivo deve conter os polígonos que delimitam as área de bacias de contribuição da  região em estudo, em formato vetorial georreferenciado (shp). O segundo arquivo deve ser uma tabela (csv) com os diferentes tipos de cobertura do solo presentes na região e os seus respectivos valores do coeficiente de runoff.
 
-A camada com as bacias de contribuição foi gerada no qgis com as ferramentas de processamento nativas e com a extensão do SAGA. Foi utilizada a ferramenta do SAGA 'watershedbasins' para gerar as bacias de contribuição, resultando em um arquivo do tipo raster, que foi vetorizado e pós-processado.
+O arquivo com os polígonos das bacias de contribuição foi gerada no software QGIS com as ferramentas de processamento nativas e com a extensão do SAGA.
 
 ### Camada com polígonos das bacias de contribuição:
 
 ![cob_sol_bc_p_a](https://user-images.githubusercontent.com/116915472/224740093-508c8fa0-15aa-4207-b946-426da0723c2a.PNG)
 
 
-Diferentes camadas para cada tipo de cobertura do solo, com os polígonos delimitando as áreas com o tipo de cobertura, foram utilizadas com o algortimo 'calculatevectoroverlaps' com a camada de bacias de contribuição como camada de entrada. Para cada feição da camada das bacias de concentração foi calculada a área das camadas de cobertura do solo contidas dentro da bacia e a porcentagem dessa área correspondente a área total da feição da bacia.
+No QGIS, foram inseridos também diferentes arquivos vetoriais para cada tipo de cobertura do solo, contendo polígonos delimitando as áreas da região onde se encontram o tipo de cobertura referido. Com o arquivo das bacias de contribuição e os representando os diferentes tipos de cobertura do solo foi utilizado no QGIS o algortimo 'calculatevectoroverlaps' que calcula para cada polígono referente a uma bacia de contribuição a área dos polígonos do arquivo de cobertura do solo contida dentro da área da bacia, e a porcentagem correspondente a área total da bacia.
 
-Foram renomeados os campos com nome das camadas de sobreposição de cobertura do solo, da camada resultante do processamento anterior, retirando os prefixos e sufixos deixando apenas uma identificação do tipo de cobertura do solo e o sufixo p ou a que representam os valores de porcentagem e area de cada tipo de cobertura para cada feição, respectivamente. Além disso, foi adicionado um campo na tabela de atributos 'Cmed' para o cálculo do coeiciente de runoff médio. Após a edição a camada foi exportada com o nome de cob_sol_bc_p_a.
+Na tabela de atributos do arquivo com as bacias de contribuição foram editados os nomes das colunas referentes à porcentagem de área de cada tipo de cobertura do solo para cada bacia, inserindo um termo de identificação do tipo de cobertura do solo e o sufixo 'p', de porcentagem. Além disso, foi adicionada uma coluna na tabela de atributos das bacias denominado 'Cmed' para o cálculo do coeiciente de runoff médio para cada bacia. Após a edição o arquivo foi exportado com o nome de cob_sol_bc_p_a.shp.
 
-Em seguida, foi criada a camada csv com os nomes dos tipos de rua iguais aos dos campos da camada cob_sol_bc_p_a (mesma grafia) com nome da coluna ‘rua’, campo de identificação de feições, id, e valores do coeficiente C para cada tipo de cobertura com o nome da coluna ‘c’.
+Em seguida, foi criado o arquivo csv com os nomes dos tipos de cobertura do solo iguais aos nomes do título das colunas da tabela do arquivo das bacias cob_sol_bc_p_a (mesma grafia). Os nomes dos tipos de cobertura foram inseridos na coluna denominada ‘rua’ do arquivo csv. Foram criadas as colunas de identificação, id, e a coluna ‘c’ para os valores do coeficiente de runoff para cada tipo de cobertura do solo. O arquivo csv foi exportado com nome c_tip_rua.csv.
 
 
-## Cálculo do coeficiente de runoff médio para cada polígono de bacia de contribuição da camada de entrada:
+## Cálculo do coeficiente de runoff médio para cada polígono de bacia de contribuição:
 
-Os shapes de cob_sol_bc_p_a.shp e o csv c_tip_rua foram colocados em uma pasta no drive chamada qgis. O código em Python desenvolvido no google colab calcula para cada feição da camada de cobertura do solo por bacia de contribuição (cob_sol_bc_p_a) o coeiciente de runoff médio de acordo com os valores de porcentagem de área (campo com sufixo '_p') para cada tipo de cobertura do solo.  Os valores calculados são inseridos no campo 'Cmed' da camda 'cob_sol_bc_p_a'.
+Os arquivos cob_sol_bc_p_a.shp e o c_tip_rua.csv foram colocados em uma pasta no drive chamada qgis. O código em Python desenvolvido no Google Colab soma para cada tipo de cobertura do solo presente na tablea c_tip_rua.csv, a área desse tipo de cobertura dentro da área de cada polígono referente a cada bacia do arquivos de bacias de contribuição (cob_sol_bc_p_a), de acordo com a porcentagem da área em relação à área total da bacia, registrada na tabela de atributos do arquivo dcob_sol_bc_p_a.shp. O coeiciente de runoff médio foi calculada a partir da média dos valores de coeficiente de runoff de cada tipo de cobertura em proporção à área ocupada por ela em cada bacia de contribuição.  Os valores calculados do coeficiente de runoff são inseridos na coluna de nome 'Cmed' do arquivo 'cob_sol_bc_p_a.shp'.
