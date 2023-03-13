@@ -15,7 +15,17 @@ O arquivo com os polígonos das bacias de contribuição foi gerada no software 
 
 No QGIS, foram inseridos também diferentes arquivos vetoriais para cada tipo de cobertura do solo, contendo polígonos delimitando as áreas da região onde se encontram o tipo de cobertura referido. Com o arquivo das bacias de contribuição e os representando os diferentes tipos de cobertura do solo foi utilizado no QGIS o algortimo 'calculatevectoroverlaps' que calcula para cada polígono referente a uma bacia de contribuição a área dos polígonos do arquivo de cobertura do solo contida dentro da área da bacia, e a porcentagem correspondente a área total da bacia.
 
+### Tabela de atributos do arquivo contendo os polígonos das bacias de contribuição:
+
+![tabela_atributos](https://user-images.githubusercontent.com/116915472/224802591-c7236f94-8f4c-40df-bb5a-7589319e6c14.PNG)
+
+
 Na tabela de atributos do arquivo com as bacias de contribuição foram editados os nomes das colunas referentes à porcentagem de área de cada tipo de cobertura do solo para cada bacia, inserindo um termo de identificação do tipo de cobertura do solo e o sufixo 'p', de porcentagem. Além disso, foi adicionada uma coluna na tabela de atributos das bacias denominado 'Cmed' para o cálculo do coeiciente de runoff médio para cada bacia. Após a edição o arquivo foi exportado com o nome de cob_sol_bc_p_a.shp.
+
+Tabela csv com dados dos tipos de cobertura do solo e os coeficientes de runoff correspondentes: 
+
+![tabela_csv](https://user-images.githubusercontent.com/116915472/224802894-fe2f3a80-acd7-447a-bb0c-ce90d65a99cb.PNG)
+
 
 Em seguida, foi criado o arquivo csv com os nomes dos tipos de cobertura do solo iguais aos nomes do título das colunas da tabela do arquivo das bacias cob_sol_bc_p_a (mesma grafia). Os nomes dos tipos de cobertura foram inseridos na coluna denominada ‘rua’ do arquivo csv. Foram criadas as colunas de identificação, id, e a coluna ‘c’ para os valores do coeficiente de runoff para cada tipo de cobertura do solo. O arquivo csv foi exportado com nome c_tip_rua.csv.
 
