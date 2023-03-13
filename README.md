@@ -9,6 +9,9 @@ Para esse código inicialmente são gerados o shapefile com os polígonos das ba
 
 A camada com as bacias de contribuição foi gerada no qgis com as ferramentas de processamento nativas e com a extensão do SAGA. Foi utilizada a ferramenta do SAGA 'watershedbasins' para gerar as bacias de contribuição, resultando em um arquivo do tipo raster, que foi vetorizado e pós-processado.
 
+![](cob_sol_bc_p_a.png)
+
+
 Diferentes camadas para cada tipo de cobertura do solo, com os polígonos delimitando as áreas com o tipo de cobertura, foram utilizadas com o algortimo 'calculatevectoroverlaps' com a camada de bacias de contribuição como camada de entrada. Para cada feição da camada das bacias de concentração foi calculada a área das camadas de cobertura do solo contidas dentro da bacia e a porcentagem dessa área correspondente a área total da feição da bacia.
 
 Foram renomeados os campos com nome das camadas de sobreposição de cobertura do solo, da camada resultante do processamento anterior, retirando os prefixos e sufixos deixando apenas uma identificação do tipo de cobertura do solo e o sufixo p ou a que representam os valores de porcentagem e area de cada tipo de cobertura para cada feição, respectivamente. Além disso, foi adicionado um campo na tabela de atributos 'Cmed' para o cálculo do coeiciente de runoff médio. Após a edição a camada foi exportada com o nome de cob_sol_bc_p_a.
