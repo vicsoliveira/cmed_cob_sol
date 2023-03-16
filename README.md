@@ -34,7 +34,7 @@ Na tabela de atributos do arquivo com as bacias de contribuição foram editados
 
 ![tabela_csv](https://user-images.githubusercontent.com/116915472/224802894-fe2f3a80-acd7-447a-bb0c-ce90d65a99cb.PNG)
 
-Em seguida, foi criado o arquivo csv com os nomes dos tipos de cobertura do solo iguais aos termos utilizados nos nomes atribuídos às colunas referentes à porcentagem de cada tipo de cobertura na tabela do arquivo das bacias, cob_sol_bc_p_a (mesma grafía). Os nomes dos tipos de cobertura foram inseridos na coluna denominada ‘rua’ na tabela do arquivo csv. Foram criadas as colunas de identificação, id, e a coluna ‘c’ para os valores do coeficiente de runoff para cada tipo de cobertura do solo. O arquivo csv foi exportado com o nome c_tip_rua.csv.
+Em seguida, foi criado o arquivo csv com os nomes dos tipos de cobertura do solo iguais aos termos utilizados nos nomes atribuídos às colunas referentes à porcentagem de cada tipo de cobertura na tabela do arquivo das bacias, cob_sol_bc_p_a (mesma grafia). Os nomes dos tipos de cobertura foram inseridos na coluna denominada ‘rua’ na tabela do arquivo csv. Foram criadas as colunas de identificação, id, e a coluna ‘c’ para os valores do coeficiente de runoff para cada tipo de cobertura do solo. O arquivo csv foi exportado com o nome c_tip_rua.csv.
 
 
 ## Cálculo do coeficiente de runoff médio para cada polígono de bacia de contribuição:
