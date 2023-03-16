@@ -17,7 +17,8 @@ O arquivo com os polígonos das bacias de contribuição foi gerada no software 
 
 ### Camada com polígonos para cada tipo de cobertura do solo encontrado na região de exemplo da subbacia da Bacia do Rio Camarajipe (Salvador - BA):
 
-![cob_solo](https://user-images.githubusercontent.com/116915472/225760827-b976a2b5-6238-4668-8a4d-9f1474c1fea2.png)
+![cob_solo2](https://user-images.githubusercontent.com/116915472/225763144-e7e0e276-dcbd-4c17-8ea0-50e7dbb299df.png)
+
 
 
 No QGIS, foram inseridos diferentes arquivos vetoriais, para cada tipo de cobertura do solo, contendo polígonos delimitando as áreas da região de drenagem onde se encontram cada tipo de cobertura. Com o arquivo das bacias de contribuição e o arquivo com os polígonos representando os diferentes tipos de cobertura do solo, foi utilizado no QGIS o algortimo 'calculatevectoroverlaps' para calcular para cada bacia de contribuição a parcela da área dos polígonos de cobertura do solo contida dentro da área da bacia, e a porcentagem correspondente em relação à área total.
