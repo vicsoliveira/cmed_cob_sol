@@ -12,8 +12,7 @@ O arquivo com os polígonos das bacias de contribuição foi gerada no software 
 
 ### Camada com polígonos das bacias de contribuição para a região de exemplo da subbacia da Bacia do Rio Camarajipe (Salvador - BA):
 
-![bacias_cont](https://user-images.githubusercontent.com/116915472/225761771-3c110cb1-9e0a-4075-973a-ed5fe5c8c880.png)
-
+![bacias_cont2](https://user-images.githubusercontent.com/116915472/225762210-3d495363-c9cb-472e-bb4a-ad0d5da18460.png)
 
 ### Camada com polígonos para cada tipo de cobertura do solo encontrado na região de exemplo da subbacia da Bacia do Rio Camarajipe (Salvador - BA):
 
